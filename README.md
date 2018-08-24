@@ -15,7 +15,8 @@ The data processing and data wrangling stage required a careful and thorough ana
 -	Not Applicable (NA) or NaN (don’t know, refused to answer) values, coded as “-9” or “-8” were converted to “0”. 
 -	Features with extremely high percentage of NAs or NaNs were dropped, but after careful examination, features with high instances of NAs or many NaNs were kept for a modified, inclusionary one-hot encoding effort explained in greater detail in the next section. 
 
-1.52 Feature Encoding & Feature Engineering
+# Feature Encoding & Feature Engineering
+
 Feature encoding and feature engineering is an important aspect of data mining, especially when working with a dataset that has extremely high dimensionality. Prior to culling its extraneous, redundant features, the 2015 RECS dataset contained more than 700 features, many of which are factor variables that include categoricals, ordinals and binary classes. But after manually culling the extraneous features and other independent features that had no ability to affect the dependent outcome variable, specific encoding techniques were considered to retain the integrity and depth of the data’s categorical variables, though it contains only about 400+ features. Converting factors to integers (usually binary) was a commonly used factor encoding technique to help reduce dimensionality and interpretability of the variables’ coefficients. 
 
 -	For example, age-based ordinal factors (age of appliances, etc.) were converted to integers using the mean for each binned category (e.g. ‘15 years old to 19 years old’ was converted just to ‘17’) so as to make them distinct from other binned categoricals that had no obvious order quality (e.g. housing type, etc.). 
@@ -27,5 +28,5 @@ Feature encoding and feature engineering is an important aspect of data mining, 
 -	Other features engineered included incorporating the average price (in U.S. Dollars) per kwH (in 2015 dollars) based on each household’s particular census region. 
 -	The mean annual and monthly income for each household was determined based on the mean range for each binned category of household income, e.g. $20,000-$39,999 was binned as an ordinal number of 3, and was converted to $30,000 and then divided by 12 for a monthly value of 2500. 
 -	The monthly income values were divided by monthly electricity costs for a percent known as the energy affordability threshold (~6-7% of monthly take home pay). The threshold was then dummy coded as either ‘0’ or ‘1’, depending on whether the household was above or below the energy affordability threshold. 
--	Also, kwH and dollar amounts were rounded to the nearest ten, e.g. (487 kwH/month becomes 490, etc.) as a way to convert the floats to integers for more accurate interpretability and predictive accuracy. 
+-	Also, KWh and dollar amounts were rounded to the nearest ten, e.g. (487 kwH/month becomes 490, etc.) as a way to convert the floats to integers for more accurate interpretability and predictive accuracy. 
 
